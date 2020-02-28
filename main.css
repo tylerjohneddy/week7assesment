@@ -1,12 +1,10 @@
-<<<<<<< Updated upstream
 .air-dancer {
     background-image: url("index_files/source.gif");
-    
-=======
+}
 #SubmitButton {
+    border-radius: 25px;
     width: 100%;
     background: red;
     margin-top: 10px;
     margin-bottom: 10px;
->>>>>>> Stashed changes
 }
