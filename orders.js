@@ -1,7 +1,7 @@
 let body = document.body;
 let getdata = () => {
 	let request = new XMLHttpRequest();
-	request.open('GET', 'http://35.189.102.11:8081//order/all/');
+	request.open('GET', 'http://35.189.102.11:8081/order/all/');
 	request.send();
 	request.onload = () => {
 		let data = JSON.parse(request.response);
@@ -46,7 +46,7 @@ let postData = (event) => {
 	}
 
 	let request = new XMLHttpRequest();
-	request.open('POST', 'http://35.189.102.11:8081//order/');
+	request.open('POST', 'http://35.189.102.11:8081/order/');
 	request.setRequestHeader('Content-Type', 'application/json');
 	let body = JSON.stringify(obj2);
 	console.log(body);
