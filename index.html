@@ -38,10 +38,30 @@
      </div>
    
  </div>
+  
+ <div class= "formDiv">
+     
+    <h2>ADD ITEM</h2>
+    <form onsubmit= itemPostData(event)>
+        <h4>Image</h4>
+        <input type="text" name="imageUrl">
+        <h4>Car Name: </h4>
+        <input type="text" name="name">
+        <h4> Price </h4>
+        <input type="text" name="price">
+        <input type="submit">
+     </form>
+ </div>
+ 
+ <div class= "formDiv">
+        <h2>ADD TO ORDER</h2>
+        <form onsubmit="postData(event)">
+            <h4>ID</h4>
+            <input type="integer" name="id">
+            <input type="submit">
+        </form>
+ </div>
 
- <div >
-     jkgjkghjg
-    </div>
 
 <script src= "Main.js"> </script>   
 <script src= "items.js"> </script>
