@@ -57,7 +57,8 @@ let itemPostData = (event) => {
     let inputs = form.getElementsByTagName("input");
     for (let input of inputs) {
         if (input.name) {
-            if (input.name == "price") {
+            if(input.name == "price"){
+
                 obj[input.name] = parseFloat(input.value);
             }
             obj[input.name] = input.value;
