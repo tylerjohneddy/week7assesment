@@ -1,10 +1,11 @@
-.air-dancer {
-    background-image: url("index_files/source.gif");
-}
-#SubmitButton {
-    border-radius: 25px;
+body {
+    display: block;
+    position: absolute;
     width: 100%;
-    background: red;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    height: 100%;
+    margin: 40px;
+}
+
+.container {
+    margin: 0px;
 }

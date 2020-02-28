@@ -11,35 +11,55 @@
    
 </head>
 
-<body class="air-dancer">
+<body>
 
 <h1>
     CAR WORLD
 </h1>
 
- <div class="button" id="SubmitButton">
-        <input type="button" value="SUBMIT ORDER" onclick="submitOrder()">
- </div>  
-
- <div>
-    <button type="button" class="btn btn-danger" onclick="">basket</button>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-danger" onclick="">Submit order</button>
+        </div>
+        <div class="col-sm-2">
+            Total cost:
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-danger" onclick="">Basket</button>
+        </div>
+    </div>
+</div>
+<br>
+ <div class="container" id="car-list">
+     <!-- <div class="row">
+         <div class="col-3" id="item">
+            <img src="https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/911-road-3629a.jpg?itok=m6x23Go0" class="img-thumbnail" alt="car1">                
+        </div>
+        <div class="col-3">
+            <h5>Car name</h5>
+            <h5>Cost</h5>
+            <button type="button" class="btn btn-danger" onclick="delete()">Delete</button>
+        </div> -->
+    </div>
+   
  </div>
-
+  
  <div class= "formDiv">
-     <form onsubmit= itemPostData(event)>
+     
+    <h2>ADD ITEM</h2>
+    <form onsubmit= itemPostData(event)>
         <h4>Image</h4>
-        <input type="text" name="imageURL">
+        <input type="text" name="imageUrl">
         <h4>Car Name: </h4>
         <input type="text" name="name">
         <h4> Price </h4>
         <input type="text" name="price">
         <input type="submit">
-    
-    </form>
+     </form>
  </div>
- <div >
-     jkgjkghjg
-    </div>
+ 
+
 
 <script src= "Main.js"> </script>   
 <script src= "items.js"> </script>
