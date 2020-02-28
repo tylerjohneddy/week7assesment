@@ -1,27 +1,55 @@
 
 let itemGetData = () => {
-    fetch("http://35.189.102.11:8081/item/all/")
-        .then(res => res.json())
-        .then(json => {
-            let item1 = document.getElementById("item");
-            debugger;
-            testing = 123;
-            let data = JSON.parse(json);
-            for (let item of data) {
-                for (let hhh in item) {
-                    console.log(hhh);
-                    if (hhh.name == "price") {
-                        let price = document.createElement("h5");
-                        price.value = input.value;
-                        item1.appendChild(price);
-                        body.appendChild(price)
-                    }
-                    // console.log(item);
-                }
-            }
-        }).catch(err => console.error(err));
+    let request = new XMLHttpRequest();
+    request.open("GET", "http://35.189.102.11:8081/item/all/");
+    request.send();
+    request.onload = () => {
 
+        let carList = document.getElementById("car-list");
+        carList.innerText = "";
+        testing = 123;
+        let data = JSON.parse(request.response);
+        for (let item of data) {
+            let row = document.createElement("div");
+            row.className = "row";
+
+            let imageCol = document.createElement("div");
+            imageCol.className = "col-3";
+
+            let image = document.createElement("img");
+            image.style.width = "100%"
+            image.src = item.imageUrl;
+
+            imageCol.appendChild(image);
+
+            let descCol = document.createElement("div");
+            descCol.className = "col-3";
+
+            let carName = document.createElement("h5");
+            carName.innerText = item.name;
+
+            descCol.appendChild(carName)
+
+            let cost = document.createElement("h5");
+            cost.innerText = item.price;
+
+            descCol.appendChild(cost)
+
+            let deleteButton = document.createElement("button");
+            deleteButton.className = "btn btn-danger";
+            deleteButton.innerText = "Delete";
+            deleteButton.addEventListener("click", () => {
+                itemDeleteData(item.id);
+            })
+
+            descCol.appendChild(deleteButton);
+            row.appendChild(imageCol)
+            row.appendChild(descCol);
+            carList.appendChild(row);
+        }
+    }
 }
+
 let itemPostData = (event) => {
     event.preventDefault();
     let form = event.target;
