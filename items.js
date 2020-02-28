@@ -14,16 +14,16 @@ let itemPostData = (event) => {
     event.preventDefault();
     let form = event.target;
     let obj = {};
-    //     let obj = {"imageUrl": "https://vignette.wikia.nocookie.net/roary-the-racing-car/images/0/05/Roary.png/revision/latest/scale-to-width-down/340?cb=20150717034653",
-    //     "name": "rory",
-    //     "price": 9.99
-    //   };
-    let inputs = form.getElementsByTagName("itemInsert");
+    let inputs = form.getElementsByTagName("input");
     for (let input of inputs) {
-        if (item.name) {
+        if (input.name) {
+            if(input.name == "price"){
+                obj[input.name] = parseFloat(input.value);
+            }
             obj[input.name] = input.value;
         }
     }
+    console.log(obj)
     let request = new XMLHttpRequest();
     request.open("POST", "http://35.189.102.11:8081/item/");
     request.setRequestHeader("Content-Type", "application/json")
