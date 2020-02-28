@@ -56,3 +56,13 @@ let postData = (event) => {
 	};
 };
 postData();
+
+
+let deleteData =(id) => {
+	let request = new XMLHttpRequest();
+	request.open('Delete', 'http://35.189.102.11:8081//order/' + id)
+	request.send();
+	request.onload =() => {
+		getdata();
+	}
+}
