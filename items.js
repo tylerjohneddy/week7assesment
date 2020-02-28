@@ -33,9 +33,14 @@ let itemPostData = (event) => {
     request.onload = () => {
         itemGetData();
     }
-
-
-
+}
+let itemDeleteData = (id) =>{
+    let request = new XMLHttpRequest();
+    request.open("DELETE", "http://35.189.102.11:8081/item/" + id);
+    request.send();
+    request.onload = () => {
+        itemGetData();
+    }
 
 }
 //itemPostData();
